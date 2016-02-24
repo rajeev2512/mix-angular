@@ -1,0 +1,495 @@
+<div id="mydiv" ng-show="loading">
+    <img src="images/loading.gif" class="ajax-loader"/>
+</div>
+<content ng-cloak>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="property-icons">AAAA
+                        <li><span class="glyphicon glyphicon-home"></span> {{property.list.propertytype}}</li>
+                    </ul>
+                    <div class="property-msg trimtext" title="{{property.list.marketing_message}}">{{property.list.marketing_message}}</div>
+                    <ul class="next-property">
+                        <li><a style="display:none;" ng-show="property.prevProp" href="/property/{{property.prevProp.slug}}"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                        <li><a style="display:none;" ng-show="property.nextProp" href="/property/{{property.nextProp.slug}}"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="social-share">
+                        <h5>Share this listing</h5>
+                        <li><a ng-click="addShareCount(property.list.id)" target="_blank" href="mailto:?subject=Share&body={{shareUrl}}" class="share-mail"></a></li>
+                        <li><a ng-click="addShareCount(property.list.id)" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}" class="share-fb"></a></li>
+                        <li><a ng-click="addShareCount(property.list.id)" target="_blank" href="https://plus.google.com/share?url={{shareUrl}}" class="share-gplus"></a></li>
+                        <li><a ng-click="addShareCount(property.list.id)" target="_blank" href="https://pinterest.com/pin/create/button/?url={{shareUrl}}&description={{property.list.description}}&media=" class="share-pin"></a></li>
+                        <li><a ng-click="addShareCount(property.list.id)" target="_blank" href="https://twitter.com/intent/tweet?text={{property.list.address}}&url={{shareUrl}}&via=TWITTER-HANDLE" class="share-twt"></a></li>
+                    </ul>
+                    <a href="/properties/list?back=1" class="back-search">Back to search</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <ul class="property-share">
+            <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}" class="property-share-fb" ng-click="addShareCount(property.list.id)"></a></li>
+            <li><a target="_blank" href="https://plus.google.com/share?url={{shareUrl}}" class="property-share-gplus" ng-click="addShareCount(property.list.id)"></a></li>
+            <li><a target="_blank" href="https://pinterest.com/pin/create/button/?url={{shareUrl}}&description={{property.list.description}}&media=" class="property-share-pin" ng-click="addShareCount(property.list.id)"></a></li>
+            <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{property.list.address}}&url={{shareUrl}}&via=TWITTER-HANDLE" class="property-share-twt" ng-click="addShareCount(property.list.id)"></a></li>
+            <li><a target="_blank" href="mailto:?subject=Share&body={{shareUrl}}" class="property-share-mail" ng-click="addShareCount(property.list.id)"></a></li>
+        </ul>
+    </section>
+    <section ng-init="showAddthis()">
+        <div class="container">
+            <div class="row mt10" style="display:none;" ng-show="property">
+                <div class="col-md-8"  >
+                    <div class="property-detail-header">
+                        <a style="display:none;" ng-show="hideButtons && !(showAuctionDiv && property.list.timeover == true && property.list.reservemet == true)" class="author-edit-property" href="/realtor/edit-listing/{{property.list.id}}"><span class="glyphicon glyphicon-pencil"></span> edit property</a>
+                        <div class="property-title">
+                            <h3>{{property.list.address}}</h3>
+                            <p>{{property.list.city}}, {{property.list.propstate}}, {{property.list.zipcode}}</p>
+                        </div>
+                        <!-- Screen and clear key -->
+                        <div class="boxBasic" id="calculator" style="display:none">
+                            <div class="close-calc" ng-click="hideCalculator()"><a href="javascript:void(0);"><i class="icon-close"></i></a></div>
+                            <div class="boxBody">
+                                <h5>Estimate your monthly payment</h5>
+                                <span class="typeLowlight">Calculator provided by MixAssets</span>
+                                <br /><br />
+                                <form class="form">
+                                    <div class="labelLeft">
+                                        <div class="field">
+                                            <label class="fieldLabel" for="property_price">Price:</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">$</div>
+                                                <input type="text" placeholder="0" class="form-control" ng-model="salePrice" ng-change="calculateLoan()">
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <div class="form-group  has-feedback">
+                                                <label class="fieldLabel" for="interest_rate">Down Payment:</label>
+                                                <input type="text" placeholder="0" class="form-control cols10" ng-model="downpay" ng-change="calculateLoan()">
+                                                <span class="addOn addOnBasic" id="interest_rate_percent">%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <label class="fieldLabel">Loan Amount:</label>
+                                            <span class="fieldItem">
+                                                <div id="calculated_loan_amount" class="fieldInlineText typeEmphasize">{{loanAmount| currency}}</div>
+                                            </span>
+                                        </div>
+                                        <br>    
+                                        <div class="field">
+                                            <div class="form-group  has-feedback">
+                                                <label class="fieldLabel" for="interest_rate">Interest Rate:</label>
+                                                <input type="text" placeholder="0" class="form-control cols10" ng-model="interest" ng-change="calculateLoan()">
+                                                <span class="addOn addOnBasic" id="interest_rate_percent">%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <div class="form-group  has-feedback">
+                                                <label class="fieldLabel" for="interest_rate">Taxes and Insurance:</label>
+                                                <input type="text" placeholder="0" class="form-control cols10" ng-model="tax" ng-change="calculateLoan()">
+                                                <span class="addOn addOnBasic" id="interest_rate_percent">%</span>
+                                                <span class="typeLowlight">({{taxAmt| currency}}/mo)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <label class="fieldLabel">Est. Payment:</label>
+                                            <span class="fieldItem text">
+                                                <div id="monthly_payment" class="h3 typeEmphasize">{{monthlyPay| currency}}</div>
+                                                <label class="fieldLabel"></label>
+                                                <br>
+                                                <div class="h7 typeLowlight">(Based on a 30 year fixed loan)</div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class='share-rate'>
+                            <div style="display:none;" ng-show="showAuctionDiv && property.auction.showPrice" class="rate-span">{{property.auction.price}}</div>
+
+                            <div ng-hide="showAuctionDiv" class="rate-span">{{property.list.sales_price}}<span style="display:none;" ng-show="property.list.listing_type == 'For Rent'">/month</span></div>   
+
+                            <a href="javascript:void(0)" ng-hide="property.list.listing_type == 'For Rent'" ng-click="showCalculator()" class="calc">
+                                Calculator
+                            </a>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>  
+                    <section class="slider" >
+                        <div id="slider" class="flexslider">
+                            <div class="btn-sale">{{property.list.listing_type}} <span ng-show="property.list.listing_type != 'For Rent'">: {{property.list.saletype}}</span></div>
+                            <ul class="slides mixassets-flex" >
+                                <li ng-repeat="media in property.medias" my-repeat-directive>
+                                    <img style="display:none;" ng-show="media.typeImage" ng-src="{{media.url}}" />
+                                    <video style="display:none;" ng-init="videoJs(media.vid_id)" data-ng-show="media.typeVideo"
+                                           id="pin_video_{{media.vid_id}}"
+                                           class="video-js vjs-default-skin vjs-big-play-centered" controls
+                                           preload="auto"  width="100%" data-setup="{}">
+                                        <source ng-src="{{media.url}}"  type="video/mp4" />
+                                    </video>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="carousel" class="flexslider" style="display:none;" ng-show="showCarousel">
+                            <ul class="slides mixassets-flex-coursal">
+                                <li ng-repeat="media in property.medias" my-repeat-directive>
+                                    <img ng-show="media.typeImage" ng-src="{{media.url}}" />
+                                    <img ng-show="media.typeVideo" src="images/video.jpg" />
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <div class="property-detail">
+                        <ul class="property-highlights"><!--
+                            --><li><i class="icon-locator"></i> {{property.list.city}}</li><!--
+                            --><li><span title="Home Area"><img src="images/home-area.png" style="margin: 0 5px;"/> {{property.list.house_size| number:2}} sqft</span><span title="Land Area"><span class="glyphicon glyphicon-fullscreen" style="margin: 0 5px;"></span> {{property.list.plot_size| number:2}} sqft</span> </li><!--
+                         <li ng-show="property.list.property_type == 'Land'"><i class="icon-resize-full-alt"></i> Area : {{property.list.plot_size| number:2}} sqft </li><!--
+                            --><li style="display:none;" ng-show="property.list.property_type != 'Land'"><i class="icon-bed"></i>{{property.list.bed_count}} Beds</li><!--
+                            --><li style="display:none;" ng-show="property.list.property_type != 'Land'"><i class="icon-bath"></i> {{property.list.bath_count}} Baths</li><!--
+                            --><li style="display:none;" ng-show="property.list.property_type != 'Land'"><i class="icon-building-filled"></i> Built on {{property.list.year_built}} </li><!--
+                            --><li style="display:none;" ng-show="property.list.property_type != 'Land'"><i class="icon-cab"></i> {{property.list.parking}} Parking</li>
+                        </ul>
+                        <div class="highlights">
+                            <h3>Highlights</h3>
+                            <ul style="display:none;" ng-show="property.list.highlights.length > 0">
+                                <li ng-repeat="highlight in property.list.highlights| limitTo:4">
+                                    {{highlight}}
+                                </li>
+                            </ul>
+                            <a style="display:none;" ng-show="property.list.highlights.length > 4" ng-click="showAllHighlights(property.list.id)" href="javascript:void(0);">show All</a>
+                            <p style="display:none;" ng-show="property.list.highlights.length <= 0">No Highlights available!</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="mixassets-property-ul-btn" ng-hide='hideButtons'>
+                            <li><a id="prop_enquiry" ng-click="openModal('enquiry', property.list.id, '/property/' + property.list.slug, 'prop_enquiry')" href="javascript:void(0);"><span>SEND MESSAGE</span></a></li>
+                            <!--Added by Aneesh to implement bidding-->
+                            <li class="hideOnTimeover" style="display:none;" ng-show="property.list.registeredtobid == false && property.list.timeover == false && property.list.upcoming == false">
+                                <a href="javascript:void(0);" ng-click="openModal('registerbid', property, '/property/' + property.list.slug)"><span>Register to bid</span></a>
+                            </li>
+                            <li class="hideOnTimeover" style="display:none;" ng-show="property.list.online == true && property.list.timeover == false && property.list.registeredtobid && property.list.registeredtobid == true && property.list.upcoming == false">
+                                <a href="javascript:void(0);" ng-click="openModal('addbid', property, '/property/' + property.list.slug)"><span>Make a Bid</span></a>
+                            </li>                            
+                            <li style="display:none;" ng-show="property.list.registeredtobid && property.list.registeredtobid == true && property.list.timeover == false && property.list.liveevent == true">
+                                <a  href="javascript:void(0);"><span>Registered</span></a>
+                            </li>                            
+                            <li style="display:none;" ng-show="property.list.online == true && property.list.upcoming == true && property.list.registeredtobid == false">
+                                <a href="javascript:void(0);"><span>Upcoming Auction</span></a>
+                            </li>
+                            <li style="display:none;" id="timeover1" ng-show="property.list.online == true && property.list.timeover == true">
+                                <a href="javascript:void(0);"><span>Closed Auction</span></a>
+                            </li>
+                            <li style="display:none;" id="timeover2" ng-show="property.list.liveevent == true && property.list.timeover == true">
+                                <a href="javascript:void(0);"><span>Regn. Closed</span></a>
+                            </li>
+                            <li ng-class="{'element-hide':property.list.allow_best_offer == 'N' || property.list.sale_type == 6}">  
+                            <content style="display:none;" ng-show="offer">
+                                <a  href="javaScript:void(0);" ><span>Offer Submitted</span></a>
+                            </content>
+                            <content ng-hide="offer">
+                                <a  href="javaScript:void(0);" id="offerhide_{{property.list.id}}" style="display:none" ><span>Offer Submitted</span></a>
+                                <a  href="javascript:void(0);" id="offershow_{{property.list.id}}" ng-click="submitOffer(property.list.id, property.list.slug)" ><span>Make an Offer</span></a>
+                            </content>
+                            </li>
+                            <li style="display:none;" ng-show="saved">
+                                <a  href="javascript:void(0);"><span>Saved</span></a>
+                            </li>
+                            <li style="display:none;" ng-show="!saved">
+                                <a href="javascript:void(0);" id="savehide_{{property.list.id}}" style="display:none" ><span>Saved</span></a>
+                                <a id="saveshow_{{property.list.id}}" href="javascript:void(0);" ng-click="saveProperty(property.list.id, property.list.slug)" ><span><span class="glyphicon glyphicon-heart"></span> Save</span></a>
+                            </li>
+                            <li style="display:none;" ng-show="!visitSaved">
+                                <a id="visitshow_allow_best_offer" href="javascript:void(0);"  ><span>Credit Score</span></a>
+                            </li>
+                        </ul> 
+                        <ul style="display:none;" class='viewmap' ng-show="mapInited" id="showmap" ng-click="initMap(property.list.latitude, property.list.longitude)">
+                            <li><a href='javascript:void(0);'><span><i class="icon-locator"></i>Map</span></a></li>
+                        </ul>
+                        <ul class='viewmap' id="hidemap" ng-click="hideMap()" style="display:none">
+                            <li><a href='javascript:void(0);'><span><i class="icon-locator"></i> hide map</span></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <div id="mapouter">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div style="display:none;" class="property-info-msg" ng-show="property.list.allow_best_offer == 'Y' && property.list.sale_type != 6">
+                            <p>ALL MIXASSETS OFFFERS GET EMAILED TO THE SELLER AND TO THE LISTING AGENT IMMEDIATELY UPON SUBMISSION</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div style="display:none;" ng-show="showAuctionDiv" class="occupant-warning">Do Not Disturb Occupant.It is a criminal offense to trespass on this property.</div>
+                        <div class="clearfix" ng-show="showAuctionDiv"></div>
+                        <div style="display:none;" class="aution-disclaimers" ng-show="showAuctionDiv && property.auction.disclaimer" ng-bind-html-unsafe="property.auction.disclaimer"></div>
+
+                        <button style="display:none;" ng-click="forceDownload(property.auction.winform_url)" type="button" class="auction-donwload-btn" ng-show="showAuctionDiv && property.auction.winform_url"><img src="images/pdf.png"><h2>{{property.auction.winform_title}}</h2> <span><img src="images/dowload-arw.png"></span></button>
+                        <div class="property-text">
+                            <h3>Property Details</h3>
+                            <p ng-bind-html-unsafe="property.list.description">
+                                <!--<a ng-show="readMoreDesc" href="javascript:void(0)" style="color:#3aacdc; text-decoration:none;display:block" ng-click="trimDesc(trimclass)"> {{readText}}</a>-->
+                            </p>
+                            <p style="display:none;" ng-show="property.list.min_deposit != 0">
+                                Minimum deposit amount is {{property.list.min_deposit|currency}}.                               
+                            </p>
+                            <p style="display:none;" ng-show="property.list.min_deposit == 0">
+                                Minimum deposit amount not specified.                                
+                            </p>
+                        </div>
+
+                        <ul style="display:none;" ng-show="property.list.amenities" class="addtional-features">
+                            <h3>Additional Features</h3>
+                            <li ng-repeat="amen in property.list.amenities| limitTo:10">
+                                {{amen}}
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <ul class="nearby-box nearby-box-align">
+                            <li>
+                                <h3>Schools</h3>
+                            </li>
+                            <li ng-repeat="school in nearby.schools| limitTo:2">
+                                <h5>{{school.name}}</h5>
+                                <p>{{school.vicinity}}</p>
+                            </li>   
+                            <li style="display:none;" class="view-more" ng-show="nearby.schools.length > 2">
+                                <a href="javascript:void(0);" ng-click="showMorePlaces(nearby.schools, 'Schools')">
+                                    View More</a>
+                            </li>    
+                            <p style="display:none;" ng-show="nearby.schools.length < 1">
+                                No nearby schools!
+                            </p>   
+                        </ul>
+                        <ul class="nearby-box">
+                            <li>
+                                <h3>Places to Eat</h3>
+                            </li>
+                            <li ng-repeat="eat in nearby.eat| limitTo:2">
+                                <h5>{{eat.name}}</h5>
+                                <p>{{eat.vicinity}}</p>
+                            </li> 
+                            <li style="display:none;" class="view-more" ng-show="nearby.eat.length > 2">
+                                <a href="javascript:void(0);" ng-click="showMorePlaces(nearby.eat, 'Places to eat')">
+                                    View More</a>
+                            </li>    
+                            <p style="display:none;" ng-show="nearby.eat.length < 1">
+                                No nearby places!
+                            </p>   
+                        </ul>
+                        <ul class="nearby-box nearby-box-align">
+                            <li>
+                                <h3>Places to Visit</h3>
+                            </li>
+                            <li ng-repeat="place in nearby.visits| limitTo:2">
+                                <h5>{{place.name}}</h5>
+                                <p>{{place.vicinity}}</p>
+                            </li>
+                            <li style="display:none;" class="view-more" ng-show="nearby.visits.length > 2">
+                                <a  href="javascript:void(0);" ng-click="showMorePlaces(nearby.visits, 'Places to visit')">View More</a>
+                            </li> 
+                            <p style="display:none;" ng-show="nearby.visits.length < 1">
+                                No nearby places!
+                            </p>   
+                        </ul>
+                        <ul class="nearby-box">
+                            <li>
+                                <h3>Services</h3>
+                            </li>
+                            <li ng-repeat="serv in nearby.services| limitTo:2">
+                                <h5>{{serv.name}}</h5>
+                                <p>{{serv.vicinity}}</p>
+                            </li>
+                            <li style="display:none;" class="view-more" ng-show="nearby.services.length > 2">
+                                <a  href="javascript:void(0);" ng-click="showMorePlaces(nearby.services, 'Services')">View More</a>
+                            </li>
+                            <p style="display:none;" ng-show="nearby.services.length < 1">
+                                No nearby services!
+                            </p> 
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>  
+                </div>   
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="property-agent-info" style="display:none;" ng-show="showAuctionDiv">
+                                <div ng-hide="property.list.timeover == false">
+                                    This Auction is no longer in Active
+                                </div>
+                                <h3>Auction Details</h3>
+                                <div class="time-indicator" style="display:none;" ng-show="property.list.timeover == false && property.auction.live == 'N'">
+                                    <p>TIME REMAINING</p>
+                                    <div class="time-style">
+                                        <img src="images/time.png" />
+                                        <div id="defaultCountdown"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="agent-bio">
+                                            <li ng-show="property.auction.live == 'N' && property.auction.start_date">Start Date: {{property.auction.startDate}}</li>
+                                            <li ng-show="property.auction.live == 'N' && property.auction.end_date">End Date: {{property.auction.counterDate}}</li>
+                                            <li ng-show="property.auction.live == 'N' && property.auction.end_date">End Time: {{property.auction.counterTime}}</li>
+                                            <li ng-show="property.auction.live == 'Y' && property.list.timeover == false">Auction is a live event.</li>
+                                            <li ng-show="property.auction.live == 'Y' && property.auction.live_time">Live Date: {{property.auction.liveTime}}, <span ng-show="property.auction.live_start_time">{{property.auction.live_start_time}}</span> <span ng-show="property.auction.live_end_time">to {{property.auction.live_end_time}}.</span></li>
+                                            <li ng-show="property.list.event_id && property.list.event_id != 'null' && property.list.event_id != 'NULL'">Event Id: {{property.list.event_id}}</li>
+                                            <li ng-show="property.auction.live == 'Y' && property.auction.live_address">Address: {{property.auction.live_address}}</li>
+                                            <li ng-show="property.auction.live == 'Y' && property.auction.live_location">Location: {{property.auction.live_location}}</li>
+                                            <li ng-show="property.auction.status != 'Completed' && property.auction.status != 'Cancelled'"class="starting-bid">Starting Bid: {{property.auction.start_bid| currency}}</li>
+                                            <li ng-show="property.auction.status == 'Live' && property.auction.live == 'N' && property.lastbid">Current Bid: <span style="color: #5fb000;">{{property.lastbid| currency}}</span></li>
+                                            <li ng-show="property.auction.status == 'Completed' && property.lastbid">Final Bid: {{property.lastbid| currency}}</li>
+                                        </ul>
+                                        <div ng-show="property.list.reservemet == false" class="reserve-not">Reserve not met</div>
+                                        <div ng-show="property.list.reservemet == true" class="reserve">Reserve met</div>                                
+                                    </div>
+                                </div>
+                                <div class="row" ng-hide='hideButtons' id="hideBtnRow">
+                                    <div class ="col-md-12 col-sm-12" ng-show="property.list.online == true && property.list.timeover == false && property.list.registeredtobid && property.list.registeredtobid == true && property.list.upcoming == false">
+                                        <a class="register-bid" href="javascript:void(0);" ng-click="openModal('addbid', property, '/property/' + property.list.slug)">Make a Bid</a>
+                                    </div>                        
+                                    <div class="col-md-12 col-sm-12" ng-show="property.list.registeredtobid == false && property.list.timeover == false && property.list.upcoming == false">
+                                        <a href="javascript:void(0);" class="register-bid" ng-click="openModal('registerbid', property, '/property/' + property.list.slug)">Register to bid</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="property-agent-info">
+                                <h3>Agent</h3>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-6 col-xs-12">
+                                        <div class="image-cropper video-chatSup">
+                                            <img ng-src="{{property.agent.user_large_image}}" />
+                                            <div style="display:none;" ng-show="property.agent.login_status == 1" class="mix-agent-online" data-toggle="tooltip" data-placement="right" title="" data-original-title="Online Now" ></div>
+                                            <div style="display:none;" ng-show="property.agent.login_status == 0" class="mix-agent-offline" data-toggle="tooltip" data-placement="right" title="" data-original-title="Offline" ></div>
+                                            <div style="display:none;" class="video-chat" ng-show="property.agent.login_status == 1 && property.agent.in_live_chat == 0 && property.agent.id != user.id">
+                                                <a class="btn video-btn" href="javaScript:void(0);" ng-click="liveChat(property.agent.id)"><span class="glyphicon glyphicon-facetime-video"></span>Video Chat Now</a>
+                                            </div>
+                                            <div style="display:none;" class="video-chat" ng-show="property.agent.login_status == 1 && property.agent.in_live_chat == 1 && property.agent.id != user.id">
+                                                <img src="/images/busy.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <ul class="agent-bio">
+                                            <h5 style="display:none;" ng-show="property.agent.user_type != 'Admin'">
+                                                <a href="/profile/{{property.agent.slug}}">
+                                                    {{property.agent.first_name}} {{property.agent.last_name}}
+                                                </a>
+                                            </h5>
+                                            <h5 style="display:none;" ng-show="property.agent.user_type == 'Admin'">
+                                                <a href="javaScript:void(0);">
+                                                    Admin
+                                                </a>
+                                            </h5>
+                                            <li style="display:none;" ng-show="property.agent.licence">License:  {{property.agent.licence}}</li>
+                                            <li style="display:none;" ng-show="property.agent.user_type != 'Admin'"><a href="/profile/{{property.agent.slug}}/list" class="total-listing">{{property.agentListingsCnt}} Listing<span ng-show="property.agentListingsCnt > 1" >s</span> </a></li>
+                                            <li>{{property.agent.review_count}} Review<span style="display:none;" ng-show="property.agent.review_count > 1" >s</span></li>
+                                            <li style="display:none;" ng-show="property.agent.phone1">Phone: {{property.agent.phone1}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <ul class="agent-ul-btn" style="display:none;" ng-show="!hideButtons">
+                                    <li><a id="prop_chat" href="javascript:void(0);" ng-click="chatUser(property.agent.id, property.list.slug, 'prop_chat')"><span>Chat</span></a></li>
+                                    <li><a id="prop_video_conf" href="javascript:void(0);" ng-click="conferenceRequest(property.agent.id, property.list.slug, property.list.id, 'prop_video_conf')"><span>Request Meeting</span></a></li>
+
+                                    <li ng-show="contactSaved">
+                                        <a  href="javascript:void(0);"><span>Saved</span></a>
+                                    </li>
+                                    <li ng-show="!contactSaved">
+                                        <a href="javascript:void(0);" id="contacthide_{{property.list.id}}" style="display:none" ><span>Saved</span></a>
+                                        <a id="contactshow_{{property.list.id}}" href="javascript:void(0);" ng-click="saveContact(property.list.id, property.list.user_id, property.list.slug)" ><span><span class="glyphicon glyphicon-heart"></span> Save</span></a>
+                                    </li>                        
+                                </ul>
+                                <div class="panel-group" id="accordion" style="display:none;" ng-show="!hideButtons">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a ng-show="userDisplayName" id="tour_home" data-toggle="collapse" data-parent="#accordion" style="display: block;" href="#collapseOne" target="_self">
+                                                    Go Tour This Home
+                                                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                                                </a>
+                                                <a ng-show="!userDisplayName" ng-click="loginFunction(property.list.slug)"
+                                                   title="Please log in" href="javaScript:void(0);">
+                                                    Go Tour This Home
+                                                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse" >
+                                            <form name="visitform" ng-submit="requestVisit(property.list.id, property.agent.id, visitform.$valid)" novalidate form-autofill-fix>
+                                                <div class="panel-body datep" >
+                                                    <p>
+                                                        <input name="visitorphone" placeholder="Phone" type="tel" ng-model="visitorphone" class="form-control prop_input" required phonerestrict="[^0-9\-\s\(\)]">
+                                                    </p>
+                                                    <p ng-show="visitform.visitorphone.$invalid && validError" class="red help-block">Phone number required</p>
+                                                    <p>
+                                                        <input name="visitoremail" placeholder="Email" type="text" ng-model="visitoremail" class="form-control prop_input" required>
+                                                    </p>
+                                                    <p ng-show="visitform.visitoremail.$invalid && validError" class="red help-block">Enter a valid email address</p>
+                                                    <p>
+                                                        <input name="visitdate" placeholder="Date" class="datep form-control prop_input" required type="text" 
+                                                               datepicker-popup="MM/dd/yyyy" min-date="minDate"
+                                                               ng-model="visit_date" 
+                                                               close-text="Close" show-button-bar="false" />
+                                                    </p>
+                                                    <p class="red" ng-show="visitform.visitdate.$invalid && validError" class="help-block">Date required</p>
+                                                    <p>
+                                                        <input id="visittime" name="visittime" placeholder="Time" type="text" ng-model="visitortime" class="form-control prop_input" required      ng-click="initTimePicker('visittime')">
+                                                    </p>
+                                                    <p class="red" ng-show="visitform.visittime.$invalid && validError" class="help-block">Time required</p>
+                                                    <button class="btn btn-mix" type="submit">Send</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="colorbox-outer" ng-include="'app/views/common_side.html'"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div style="display:none;" class="search-place-box" ng-show="nearbyProperties.properties.length > 1">
+                                <h2>You might also like...</h2>
+                                <ul class="u-might-also-like">
+                                    <li ng-repeat="nearprop in (nearbyProperties.properties| filter:hideCurrent)| limitTo:3">
+                                        <a href="/property/{{nearprop.slug}}">
+                                            <img ng-src="{{nearprop.pic_url && nearprop.pic_url|| '/images/property-placeholder.png'}}" />
+                                        </a>
+                                        <div class="search-details">
+                                            <h3 class="trimheading"><a href="/property/{{nearprop.slug}}">{{nearprop.address}}</a></h3>
+                                            <p> Beds: {{nearprop.bed_count}}, Baths: {{nearprop.bath_count}} </p>                                            
+                                            <ul class="search-amt-mes">
+                                                <li>{{nearprop.sales_price}}</li>
+                                                <li>{{nearprop.house_size| number:2}}  sqft</li>
+                                            </ul> 
+                                        </div>   
+                                    </li>
+
+                                    <div class="more">
+                                        <a style="display:none;" ng-show="viewMoreHme" href="/properties/list?address={{property.list.city}}" class="enter">View more Homes</a>
+                                    </div>    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none;" class="error row mt25" style="display:none;" ng-show="error"><h2>{{error}}</h4></div>
+        </div>
+    </section>
+</content>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox" ng-init="initp()"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->

@@ -1,0 +1,17 @@
+<div class=customer-service>customer service <span>{{customerService}}</span></div>
+<ul class="header-nav nav-collapse" ng-init="showCollapse()">
+<li ng-cloak ng-show=isRealtor>
+<a target=_self href="/realtor/submit-listing">Sell</a>
+</li> <li ng-cloak ng-hide=logged>
+<a href="javascript:void(0);" ng-click="openModal('login', '/realtor/submit-listing')">Sell</a>
+</li> <li><a target=_self href="/properties/list?listings=For Sale">Buy </a></li> <li><a target=_self href="/properties/list?listings=For Rent">Rent</a></li><li><a target=_self href="/properties/list?sale=6">Auctions</a></li><li><a target=_self href="/properties/list?sale=7">Notes</a></li>
+<li>
+<a target=_self href="/service/list">Services</a>
+<ul>
+<li role=presentation ng-repeat="type in servicetypes">
+<a target=_self href="/service/list?category={{type.name}}" tabindex=-1 role=menuitem>{{type.name}}</a>
+</li>
+</ul>
+</li>
+<li><a target=_self href="javascript:void(0);">Finance</a></li><li><a target=_self href="/winforms">Real Estate Forms</a></li>
+</ul>

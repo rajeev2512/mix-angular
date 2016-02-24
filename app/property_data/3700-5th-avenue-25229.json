@@ -1,0 +1,282 @@
+{
+    "list": {
+        "id": 25229,
+        "slug": "3700-5th-avenue-25229",
+        "user_id": 1,
+        "listing_type": "For Sale",
+        "property_type": 3,
+        "sale_type": 1,
+        "apn": "93461124",
+        "mls": "PW15024944",
+        "sales_price": 1050000,
+        "prev_price": 1075000,
+        "bed_count": 2,
+        "bath_count": 2,
+        "min_deposit": 0,
+        "year_built": "1986",
+        "plot_size": 2300,
+        "parking": 2,
+        "house_size": 1471,
+        "amenities": [
+            "Fireplace"
+        ],
+        "highlights": [
+            "Back Yard",
+            "Close to Clubhouse",
+            "Garden"
+        ],
+        "occupancy": "Vacant",
+        "address": "3700 5th Avenue",
+        "city": "Corona del Mar",
+        "state_id": 19,
+        "country_id": 214,
+        "zipcode": "92625",
+        "latitude": 0,
+        "longitude": 0,
+        "description": "**New Price** $999k - $1.050m. The Best Value in Corona del Mar! Let the good times roll. Welcome to 3700 5th Ave in Corona del Mar in the 55+ Active Adult neighborhood of The Terraces (anyone can purchase this home but must be 55+ to live in the home). Walk into this single level lower unit home and immediately you are impressed with the open floor plan featuring 1,471 square feet of living space with two bedrooms and two bathrooms. Natural light fills the space as you are greeted by the cozy fireplace in the living room, 10 foot ceilings and the span of windows that showcase the professionally landscaped grounds of this home. The kitchen is a delightful retreat with a separate kitchen nook, large light filled windows, plenty of storage and also leads to the two car attached garage. The master bedroom flows seamlessly into the master bathroom with dual vanities, soaking tub, shower, walk-in closet and access to the backyard patio. The Terraces feature a community clubhouse with a pool and spa and is also adjacent to Oasis Senior Center with multiple activities, support services and community events. Walking distance to The Village of Corona del Mar with award winning restaurants, shopping, farmers market and Corona del Mar State Beach.",
+        "status": "Active",
+        "featured": "N",
+        "allow_best_offer": "Y",
+        "marketing_message": "",
+        "event_id": "",
+        "created_at": "2015-06-24 11:59:56",
+        "updated_at": "2015-06-24 11:59:56",
+        "propcountry": "United States",
+        "propstate": "California",
+        "saletype": "Standard",
+        "propertytype": "Condo/Townhouse",
+        "location": ""
+    },
+    "own_property": false,
+    "offer": false,
+    "saved": false,
+    "contactSaved": false,
+    "visitSaved": false,
+    "images": [
+        {
+            "pic_id": 264857,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media0/D8FD2F39-7130-4138-8D5F-0043CA36F299.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264858,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media1/4705AC22-4906-41F5-AD51-039F50DDBF44.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264859,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media9/EC5C4C6F-3536-413B-81A1-08CDE84E0F56.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264860,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media0/8D657F3A-8CC2-47F4-9847-0939CCE3CBBC.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264861,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media3/8C3F1FE1-9049-406C-ADFA-42ABF1A81871.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264862,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media6/80CEBB45-9E32-42FE-B3E4-42FF8BB1FA3C.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264863,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media7/CC892878-F983-48FB-9457-5801E1428957.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264864,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media8/8FB5751C-2992-4BFD-9D11-5A2BE457DFB5.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264865,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media8/6874D303-FF27-49D0-B535-62FE2C05BE5C.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264866,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media8/C2BACDE7-A534-459C-8507-66A0C711A24E.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264867,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media1/CEF26D10-6A0D-4247-95E7-70FFA5F597EC.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264868,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media9/5799F230-06FC-42F0-BC03-7461E2B4A9BD.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264869,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media2/CBEABADE-6F0D-421D-985B-74A14683D263.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264870,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media7/F8164D5C-B8D9-49B9-BA42-76DAD9CB61D6.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264871,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media8/E5DF1C60-FA81-430D-8B29-837F13CD9C14.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264872,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media0/E573D834-73B6-4107-9A4E-8444F8D22C13.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264873,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media2/DC725C5E-B9A9-4949-A3C0-8C068DAF61D5.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264874,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media6/16E2AA20-F628-48B3-A766-91DF17053CCB.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264875,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media7/182F0C14-73FF-4151-8A78-983D7F7C88DA.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264876,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media4/6A5D1ED6-0E99-42A7-8855-98F0D395E2F8.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264877,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media5/2C127463-9B40-4CD8-92BD-A0A89754BE06.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264878,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media4/1D5114BE-B377-4E67-8AA3-B699CE43DDB2.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264879,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media9/32823791-4F51-40D0-AAC0-BAB307C07250.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264880,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media6/0B291A0E-672E-4790-9E28-BD77C9020DB1.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264881,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media4/32D9A315-5612-43BC-A941-BF23BA180DF5.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264882,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media5/AF3F0DF0-6BAB-48BF-8B32-C373C287492B.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264883,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media1/A2F0D0BF-752B-4A6E-B916-CE2CD95FF940.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264884,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media5/0B5EB335-B6AA-424D-A244-DB6E128952E8.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264885,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media7/D798C342-2449-4A4E-860A-DBA13039E546.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264886,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media3/102180C0-E2BE-4478-940A-DD340A3D9EC0.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264887,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media3/B56E898F-F676-4745-B003-E6FEFE9BF932.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264888,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media0/DAB70143-EC20-4FC9-BA8E-F02EDE021548.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264889,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media2/3826DF08-7446-441F-B4E1-F569F7F83F24.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264890,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media9/475CFA11-97CE-42F8-A34D-F5D1A11EC0B6.jpg",
+            "typeImage": true
+        },
+        {
+            "pic_id": 264891,
+            "url": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=http://media.crmls.org/media6/597BA143-0203-4F82-AAC3-F864ED954871.jpg",
+            "typeImage": true
+        }
+    ],
+    "videos": [],
+    "agent": {
+        "email": "qamailtest1@gmail.com",
+        "login_status": 1,
+        "status": "Active",
+        "mpp_status": 1,
+        "slug": "admin",
+        "mtst_id": "",
+        "user_type": "Admin",
+        "user_sub_type": "",
+        "tok_session": "2_MX40NTAxNjYzMn5-MTQzNTMwMjE0Njc5NH5jZ0grajdiMVh3TkgyRlRJWm0yZEk5aTF-UH4",
+        "in_live_chat": 0,
+        "tok_token": "T1==cGFydG5lcl9pZD00NTAxNjYzMiZzaWc9OWJiMzIxODMzMDNhYTA4ZDA5ZWFjMjVmMTIzZmQwODgzMzRlNWQ0OTpzZXNzaW9uX2lkPTJfTVg0ME5UQXhOall6TW41LU1UUXpOVE13TWpFME5qYzVOSDVqWjBncmFqZGlNVmgzVGtneVJsUkpXbTB5WkVrNWFURi1VSDQmY3JlYXRlX3RpbWU9MTQzNTMwMjE0NiZyb2xlPXB1Ymxpc2hlciZub25jZT0xNDM1MzAyMTQ2LjgxMTIwNTk3ODk3",
+        "user_id": 1,
+        "screen_name": "Admin",
+        "first_name": "Mixassets",
+        "last_name": "Admin",
+        "gender": "Male",
+        "country_id": 214,
+        "language_id": "",
+        "user_image": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=150&h=150&src=http://mixassets.cubettech.com/uploads/user/1432793508_brad-pit.jpg",
+        "bs_logo": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=174&h=58&src=http://mixassets.cubettech.com/images/logo.jpg",
+        "profession_type": "Administration and Policy",
+        "professional_title": "Mixed Assets Administrator",
+        "business_name": "Mixed Assets Administrator",
+        "address": "2790 Harbor Blvd, Suite 109",
+        "city": "Anaheim",
+        "state_id": 19,
+        "zipcode": "92801",
+        "phone1": "444-444-4553",
+        "phone2": "",
+        "realtor_since": "",
+        "cell_phone": "(444)459-4123",
+        "bk_image": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=1917&h=365&src=http://mixassets.cubettech.com/images/user-profile-bg.jpg",
+        "user_video": "",
+        "countryname": "United States",
+        "statename": "California",
+        "success": "true",
+        "login": "true",
+        "id": 1,
+        "user_large_image": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=300&h=300&src=http://mixassets.cubettech.com/uploads/user/1432793508_brad-pit.jpg",
+        "user_extra_large_image": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=600&h=600&src=http://mixassets.cubettech.com/uploads/user/1432793508_brad-pit.jpg",
+        "licence": "RF19MM12999",
+        "profileVisit": 10,
+        "review_count": 2,
+        "service_count": 0
+    },
+    "agentListingsCnt": 24744,
+    "imagePath": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=750&h=400&src=https://mixassets.s3.amazonaws.com/",
+    "thumbPath": "http://mixassets.cubettech.com/timthumb/timthumb.php?zc=1&w=200&h=125&src=https://mixassets.s3.amazonaws.com/"
+}

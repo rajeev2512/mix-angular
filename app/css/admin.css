@@ -1,0 +1,196 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 Jun, 2014, 4:58:05 PM
+    Author     : dev220
+*/
+#auction_container{
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221) !important;
+    margin-bottom: 15px;
+}
+
+#auction_container1{
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221) !important;
+    margin-bottom: 15px;
+}
+
+.profile_container{
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221) !important;
+    margin-bottom: 15px;
+}
+
+.inline-btn {
+    float: left;
+    margin-right: 5px;
+}
+table.table thead .no-sort {
+    pointer-events: none;
+    background: none;
+}
+select#enq_types, select#settings_cat, select#user_types, select#listing_types, select#status_type, select#auction-id {
+    min-width: 150px;
+    margin-left: 15px;
+}
+select#auction-id{
+    max-width:70%;
+}
+.sml-col-tbl {
+    width: 10%;
+}
+
+.thumbnail{
+    cursor: pointer;
+    display: inline-block !important;
+    margin: 5px;
+    position: relative;
+}
+
+.description{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    /*remove comment if you want a gradual transition between states
+    -webkit-transition: visibility opacity 0.2s;
+    */
+}
+
+
+label.control-label span {
+    color: red;
+}
+
+.view-label {
+    padding-top: 7px;
+}
+
+#cboxLoadingOverlay {
+    background: #fff;
+    border: 1px solid;
+}
+#cboxLoadingGraphic {
+    background: url(../images/loading.gif) no-repeat center center;
+    background-size: 200px 200px;
+}
+
+.width-40{
+    width:40% !important;
+}
+
+.display-inline-block{
+    float:none;
+    display: inline-block;
+}
+
+ml20{
+    margin-left:20px;
+}
+.btn-file,.btn-file:hover,.btn-file:focus {
+    background: none;
+    border: none; 
+    box-shadow: none;
+    position: relative;
+    padding-left: 0;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    -webkit-appearance:none; 
+
+}
+
+.doc-upload {
+    position: relative !important;
+    overflow: hidden !important;
+}
+.doc-upload input {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    filter: alpha(opacity=0) !important;
+    transform: translate(-300px, 0) scale(4) !important;
+    font-size: 23px !important;
+    direction: ltr !important;
+    cursor: pointer !important;
+}
+
+.doc-up-name{
+    display:inline;
+}
+
+.btn-xs, .btn-group-xs > .btn{
+    display:inline-block;
+    margin-bottom:7px;
+}
+
+/**Admin Dashboard Styles added by Aneesh************/
+.panel-dashboard .panel-body table td .badge{
+    float: right;
+}
+.panel-dashboard {
+    border: 1px solid #34aadb;
+    border-radius: 0; margin-bottom:40px;
+}
+
+.panel-dashboard .panel-heading {
+    background: #34aadb;
+    color: #fff;
+    border-radius: 0;
+}
+.panel-dashboard .panel-heading h3 {
+    font-size: 20px;
+    line-height: 30px;
+}
+.panel-dashboard .panel-body {
+    padding: 0;
+}
+.panel-dashboard .panel-body table {
+    margin-bottom: 0 !important;
+}
+.panel-dashboard .panel-body table td {
+    font-size: 16px;
+    color: #666;
+    padding: 15px;
+}
+.higlighted {
+    font-weight: bold;
+}
+.dataTables_processing{
+    clear:both;
+    text-align: center;
+}
+
+#property-form select > option{
+    padding:2px 12px;   
+    
+}
+
+#property-form select > optgroup{
+    color: #888888;
+    padding-left:12px;
+    padding-right:12px;
+    
+}
+
+#property-form select > optgroup > option{
+    color: #555555;
+    padding:2px 12px;    
+}
+

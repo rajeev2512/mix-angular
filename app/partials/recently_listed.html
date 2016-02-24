@@ -1,0 +1,36 @@
+<section>
+    <div id="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="padding-top: 100px;">
+                    <div class="just-listed">
+                        <h3>Just Listed</h3>
+                        <div class="customNavigation">
+                            <a class="btn prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                            <a class="btn next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-md-12">
+                    <div >
+                        <div class="item col-md-3" ng-repeat="prop in properties" >
+                            {{'Nothing' + 'Here' }}
+                            <div class=just-itmes>
+                                <a href="#/property/{{prop.slug}}">
+                                    <img ng-src="{{prop.image}}" width="415px;" />
+                                    <h4>AAA{{prop.address}}</h4>
+                                </a>
+                                <h5>{{prop.city}} <span >, Beds: {{prop.bed_count}} </span><span ng-show=prop.bath_count>, Baths: {{prop.bath_count}} </span></h5>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

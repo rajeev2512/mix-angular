@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" ng-app="mixApp">
+    <head>                
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <meta property="og:image" content="http://mixassets.dev/images/logo_fb_share.png"/>      
+        <meta name="description" property="og:description" content=""/>
+        <meta property="og:title" content=""/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content=""/>        
+        <title>MixAssets</title>
+        <link rel="icon" type="image/png" href="images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-tagsinput.css" charset="utf-8">
+        <!-- style -->
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/flat-ui.css" charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:400,100,300,700,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/style.css" charset="utf-8">
+
+        <!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->        
+
+    </head>
+        <body>
+
+           <header class="mixasset-nav navbar-fixed-top" >
+                <div class="top-widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <ul class="top-widgets-nav" >
+                                    <li class="bordernone" ng-hide="logged">
+                                        <a href="javascript:void(0);" ng-click="openModal('signup');" id="join_mix">Join MixAssets</a>
+                                    </li>
+                                    <li ng-cloak style="display:none;" ng-show="isRealtor" ng-class="{'bordernone':isRealtor}">
+                                        <a target="_self" href="/realtor/submit-listing">Submit a Listing</a>
+                                    </li>
+                                    <li ng-cloak style="display:none;" ng-show="isRealtor">
+                                        <a href="http://mtst.mixassets.com" target="_blank">Multisoft</a>
+                                    </li>
+                                    <li ng-cloak ng-hide="logged">
+                                        <a href="javascript:void(0);" data-ng-click="openModal('login', '/realtor/submit-listing');" id="login">Submit a Listing</a>
+                                    </li>                                
+                                    <li ng-class="{'bordernone':isService || isBuyer || isLoanofficer}"><a target="_self" href="/agents">Find Agent </a></li>
+                                    <li><a target="_self" href="/page/careers">Careers</a></li>
+                                    <li data-ng-cloak data-ng-hide="logged">
+                                        <a href="javascript:void(0);" data-ng-click="openModal('login');" id="login">Log In</a>
+                                    </li>
+                                    <li data-ng-cloak data-ng-hide="logged">
+                                        <a href="javascript:void(0);" data-ng-click="openModal('login');">My Profile</a>
+                                    </li>
+                                    <li data-ng-hide="!logged">
+                                        <a target="_self" data-ng-cloak href="/videos">Videos</a>
+                                    </li>
+                                    <li data-ng-hide="!logged">
+                                        <a target="_self" ng-show="isBuyer" style="display:none;" data-ng-cloak href="/buyer/dashboard">My Profile</a>
+                                        <a target="_self" ng-show="isService" style="display:none;" data-ng-cloak href="/service/dashboard">My Profile</a>
+                                        <a target="_self" ng-show="isRealtor" style="display:none;" data-ng-cloak href="/realtor/dashboard">My Profile</a>
+                                        <a target="_self" ng-show="isLoanofficer" style="display:none;" data-ng-cloak href="/loanofficer/dashboard">My Profile</a>
+                                        <a target="_self" ng-show="!(isRealtor || isBuyer || isService || isLoanofficer)" style="display:none;" data-ng-cloak href="/realtor/dashboard">My Profile</a>
+                                    </li>
+                                    <!-- <li style="position: relative;" data-ng-hide="!logged" ng-include="'app/views/notifications.html'" ng-cloak></li> -->
+                                    <li data-ng-hide="!logged" style="border-right: 0;">
+                                        <a data-ng-cloak href="javascript:void(0);" data-ng-click="logout();">Log Out</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="blog" target="_blank">Blog</a>
+                                    </li>
+                                </ul>  
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-navigation">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3" ng-include="'partials/logo.html'" >
+
+                            </div>
+                            <div class="col-md-9" ng-include="'partials/main_menu.html'" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+           </header>
+
+
+           <div ng-view></div>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="angjs/app.js"></script>
+  <script src="angjs/controllers/homeController.js"></script>
+</body>
+</html>

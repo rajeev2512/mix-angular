@@ -1,0 +1,23 @@
+[
+	{
+		"slug":"3700-5th-avenue-25229",
+		"url":"/property/3700-5th-avenue-25229",
+		"image":"http://media.crmls.org/media0/D8FD2F39-7130-4138-8D5F-0043CA36F299.jpg",
+		"price":"5000",
+		"address":"3700 5th Avenue",
+		"city":"Somis",
+		"bath_count":2,
+		"bed_count":3
+
+	},
+	{
+		"slug":"3700-5th-avenue-25229",
+		"url":"/property/3700-5th-avenue-25229",
+		"image":"http://media.crmls.org/media0/D8FD2F39-7130-4138-8D5F-0043CA36F299.jpg",
+		"price":"5000",
+		"address":"3700 5th Avenue",
+		"city":"Somis",
+		"bath_count":3,
+		"bed_count":4
+	}
+]

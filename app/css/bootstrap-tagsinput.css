@@ -1,0 +1,148 @@
+/*.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  color: #555;
+  vertical-align: middle;
+  border-radius: 4px;
+  max-width: 100%;
+  line-height: 22px;
+  cursor: text;
+}*/
+/*.bootstrap-tagsinput input {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: auto !important;
+  max-width: inherit;
+}*/
+
+.bootstrap-tagsinput{
+    display:block;
+    width:100%;
+    height:auto;
+    padding: 9px 12px 5px;
+    font-size:14px;
+    line-height:1.42857143;
+    color:#555;
+    background-color:#fff;
+    background-image:none;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
+}
+.bootstrap-tagsinput:focus{
+    border-color:#66afe9;
+    outline:0;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+.bootstrap-tagsinput::-moz-placeholder{
+    color:#999;opacity:1
+}
+.bootstrap-tagsinput:-ms-input-placeholder{
+    color:#999
+}
+.bootstrap-tagsinput::-webkit-input-placeholder{
+    color:#999
+}
+.bootstrap-tagsinput[disabled],.bootstrap-tagsinput[readonly],fieldset[disabled] .bootstrap-tagsinput{
+    cursor:not-allowed;
+    background-color:#eee;
+    opacity:1
+}
+.bootstrap-tagsinput input {
+    border: none;
+    box-shadow: none;
+}
+.bootstrap-tagsinput input:focus {
+    border: none;
+    box-shadow: none;
+}
+.bootstrap-tagsinput .tag {
+    color: #FFFFFF;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 2px;
+    padding: 1%
+}
+.bootstrap-tagsinput .tag [data-role="remove"] {
+    margin-left: 8px;
+    cursor: pointer;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+    content: "x";
+    padding: 0px 2px;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:hover:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.dropdown-autocomplete{
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    display:none;
+    float:left;
+    min-width:160px;
+    padding:5px 0;
+    margin:2px 0 0;
+    list-style:none;
+    font-size:14px;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border:1px solid rgba(0,0,0,.15);
+    border-radius:4px;
+    -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
+    box-shadow:0 6px 12px rgba(0,0,0,.175);
+    background-clip:padding-box
+}
+
+.dropdown-autocomplete .divider{
+    height:1px;
+    margin:9px 0;
+    overflow:hidden;
+    background-color:#e5e5e5
+}
+.dropdown-autocomplete>li>a{
+    display:block;
+    padding:3px 20px;
+    clear:both;
+    font-weight:400;
+    line-height:1.42857143;
+    color:#333;
+    white-space:nowrap
+}
+.dropdown-autocomplete>li>a:hover,.dropdown-autocomplete>li>a:focus{
+    text-decoration:none;
+    color:#262626;
+    background-color:#f5f5f5
+}
+.dropdown-autocomplete>.active>a,.dropdown-autocomplete>.active>a:hover,.dropdown-autocomplete>.active>a:focus{
+    color:#fff;
+    text-decoration:none;
+    outline:0;
+    background-color:#428bca
+}
+.dropdown-autocomplete>.disabled>a,.dropdown-autocomplete>.disabled>a:hover,.dropdown-autocomplete>.disabled>a:focus{
+    color:#999
+}
+.dropdown-autocomplete>.disabled>a:hover,.dropdown-autocomplete>.disabled>a:focus{
+    text-decoration:none;
+    background-color:transparent;
+    background-image:none;
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    cursor:not-allowed
+}
